@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Model\Blog;
 use App\Events\BlogsNotification;
+use App\Events\BlogsUpdateNotification;
 
 class BlogController extends Controller
 {
@@ -48,6 +49,8 @@ class BlogController extends Controller
         }
 
         $blog->update(['publish'=> $status]);
+
+        event(new BlogsUpdateNotification($blog));
 
         return redirect()->back()->with('status', 'Blog berhasil di Update');
     }

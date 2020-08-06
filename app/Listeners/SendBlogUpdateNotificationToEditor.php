@@ -2,13 +2,13 @@
 
 namespace App\Listeners;
 
-use App\Events\BlogsNotification;
+use App\Events\BlogsUpdateNotification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Mail;
-use App\Mail\sendEmailToWritter;
+use App\Mail\sendEmailUpdateToWritter;
 
-class SendBlogNotificationToWriter implements ShouldQueue
+class SendBlogUpdateNotificationToEditor implements ShouldQueue
 {
     /**
      * Create the event listener.
@@ -23,12 +23,11 @@ class SendBlogNotificationToWriter implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param  BlogsNotification  $event
+     * @param  BlogsUpdateNotification  $event
      * @return void
      */
-    public function handle(BlogsNotification $event)
+    public function handle(BlogsUpdateNotification $event)
     {
-        // dd($event);
-        Mail::to('editor@example.com')->send(new sendEmailToWritter($event->blog));
+        Mail::to('writter@example.com')->send(new sendEmailUpdateToWritter($event->blog));
     }
 }

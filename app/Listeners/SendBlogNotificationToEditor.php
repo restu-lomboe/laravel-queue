@@ -8,7 +8,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Mail;
 use App\Mail\sendEmailToEditor;
 
-class SendBlogNotificationToEditor
+class SendBlogNotificationToEditor implements ShouldQueue
 {
     /**
      * Create the event listener.

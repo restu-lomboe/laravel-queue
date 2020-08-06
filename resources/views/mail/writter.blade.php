@@ -7,6 +7,6 @@ Selamat Saudara/i <b>{{ $blog->user->name }}</b> , blog Anda yang berjudul<block
 Button Text
 @endcomponent --}}
 
-Thanks,<br>
+<br>Thanks,<br>
 {{ config('app.name') }}
 @endcomponent

@@ -7,6 +7,6 @@ Ada artikel baru yang baru saja dibuat oleh <b>{{ $blog->user->name }}</b> dan e
 Button Text
 @endcomponent --}}
 
-Thanks,<br>
+<br>Thanks,<br>
 {{ config('app.name') }}
 @endcomponent

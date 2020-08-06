@@ -23,6 +23,9 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\SendBlogNotificationToEditor',
             'App\Listeners\SendBlogNotificationToWriter',
         ],
+        'App\Events\BlogsUpdateNotification' => [
+            'App\Listeners\SendBlogUpdateNotificationToEditor'
+        ],
     ];
 
     /**
